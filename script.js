@@ -16,8 +16,22 @@ function createPetal() {
 // Get the audio player element
 const audioPlayer = document.getElementById('audio-player');
 
+// Create an AudioContext
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let isAudioPlaying = false; // Track if audio is playing
+
 // Function to play the selected song
 function playSong(songUrl) {
+    // Resume the audio context when the user clicks the button
+    if (!isAudioPlaying) {
+        audioContext.resume().then(() => {
+            console.log('Playback resumed successfully');
+            isAudioPlaying = true; // Set to true to indicate audio is playing
+        }).catch(error => {
+            console.error('Error resuming audio context:', error);
+        });
+    }
+
     // Stop any currently playing audio
     if (!audioPlayer.paused) {
         audioPlayer.pause();
@@ -25,7 +39,7 @@ function playSong(songUrl) {
 
     // Update the audio player source to the selected song from Google Drive
     audioPlayer.src = songUrl;
-    
+
     // Unhide the player and play the song
     audioPlayer.hidden = false;
     audioPlayer.load();  // Load the new audio file
