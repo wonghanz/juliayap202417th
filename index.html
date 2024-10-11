@@ -10,22 +10,28 @@
     <div class="container">
         <h1>Happy 17th Birthday, Julia Yap Hui Yun!</h1>
         <p class="blessing">“May the Lord bless you and keep you.” – Numbers 6:24</p>
-        <p class="promise">After SPM, if you want me, I'll find you. Our story doesn't end here; it just begins.</p>
-        <p class="support">Take care of yourself; don't get depressed anymore. You are stronger than you think.</p>
+
+        <p class="promise">After SPM, if you want me, I'll find you. Our story doesn't end here, it just begins.</p>
+
+        <p class="support">Take care of yourself, don't get depressed anymore. You are stronger than you think.</p>
+
         <h2 class="love-message">Julia, you are the best ❤️‍🔥💞💝.</h2>
+
+        <!-- Poem Display Area -->
+        <div class="poem" id="poem"></div>
 
         <!-- Buttons to choose the music -->
         <div class="music-buttons">
-            <button onclick="playSong('https://drive.google.com/file/d/1fTcZPYWPVNml0G-TdZD3MZ3HDeo6g8y5/view?usp=sharing')"> Chinese </button>
-            <button onclick="playSong('https://drive.google.com/uc?export=download&id=18MhuWrt0nWcGyfTRlj-FGSLwafFDsLAB')"> Piano </button>
-            <button onclick="playSong('https://drive.google.com/uc?export=download&id=1qCHqlAqfSMpP1FFHae9AL48H_vrhIKG8')"> Christian </button>
+            <button onclick="playSong('https://drive.google.com/uc?export=download&id=1fTcZPYWPVNml0G-TdZD3MZ3HDeo6g8y5')">Play Chinese Song</button>
+            <button onclick="playSong('https://drive.google.com/uc?export=download&id=18MhuWrt0nWcGyfTRlj-FGSLwafFDsLAB')">Play Piano Music</button>
+            <button onclick="playSong('https://drive.google.com/uc?export=download&id=1qCHqlAqfSMpP1FFHae9AL48H_vrhIKG8')">Play Christian Song</button>
         </div>
 
         <!-- Audio player (hidden by default) -->
         <audio id="audio-player" controls hidden></audio>
     </div>
 
-    <!-- JavaScript for music control -->
+    <!-- JavaScript for music and poem control -->
     <script src="script.js"></script>
 </body>
 </html>
