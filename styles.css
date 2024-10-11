@@ -5,7 +5,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url('images/flowers-bg.jpg'); /* Add the flower background */
+    background-image: url('images/flowers-bg.jpeg'); /* Add the flower background */
     background-size: cover;
     background-position: center;
 }
