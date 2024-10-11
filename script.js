@@ -31,3 +31,21 @@ function playSong(songUrl) {
     audioPlayer.load();  // Load the new audio file
     audioPlayer.play();  // Start playing the new song
 }
+const audioPlayer = document.getElementById('audioPlayer');
+
+function playSong(songUrl) {
+    // Stop any currently playing audio
+    if (!audioPlayer.paused) {
+        audioPlayer.pause();
+    }
+
+    // Update the audio player source to the selected song
+    audioPlayer.src = songUrl;
+
+    // Unhide the player and play the song
+    audioPlayer.hidden = false;
+    audioPlayer.load();  // Load the new audio file
+    audioPlayer.play().catch(error => {
+        console.error('Error trying to play the audio:', error);
+    });
+}
