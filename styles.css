@@ -6,8 +6,9 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('images/flowers-bg.jpeg'); /* Add the flower background */
-    background-size: cover;
-    background-position: center;
+    background-size: cover;  /* Use 'cover' for full coverage */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
 }
 
 /* Container for the text */
