@@ -93,5 +93,21 @@ function displayPoem() {
 // Start displaying the poem after a short initial delay
 setTimeout(displayPoem, 2000);
 
+
+function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = Math.random() * 100 + 'vw';
+    document.querySelector('.birthday-animation').appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 6000); // Flower disappears after 6 seconds
+}
+
+// Generate new flowers every 3 seconds
+setInterval(createFlower, 3000);
+
+
 // Trigger falling petals every second
 setInterval(createPetal, 1000);
