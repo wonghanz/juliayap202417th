@@ -13,42 +13,18 @@ function createPetal() {
     }, 5000);
 }
 
-// Get the audio player element
-const audioPlayer = document.getElementById('audio-player');
+// YouTube video player (iframe)
+const youtubePlayer = document.getElementById('yt-iframe');
 
-// Create an AudioContext
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-let isAudioPlaying = false; // Track if audio is playing
-
-// Function to play the selected song
-function playSong(songUrl) {
-    // Resume the audio context when the user clicks the button
-    if (!isAudioPlaying) {
-        audioContext.resume().then(() => {
-            console.log('Playback resumed successfully');
-            isAudioPlaying = true; // Set to true to indicate audio is playing
-        }).catch(error => {
-            console.error('Error resuming audio context:', error);
-        });
-    }
-
-    // Stop any currently playing audio
-    if (!audioPlayer.paused) {
-        audioPlayer.pause();
-    }
-
-    // Update the audio player source to the selected song from Google Drive
-    audioPlayer.src = songUrl;
-
-    // Unhide the player and play the song
-    audioPlayer.hidden = false;
-    audioPlayer.load();  // Load the new audio file
-
-    // Start playing the new song
-    audioPlayer.play().catch(error => {
-        console.error('Error trying to play the audio:', error);
-    });
+// Function to play the selected YouTube song
+function playYouTube(videoId) {
+    // Update the iframe with the correct video URL and autoplay
+    youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}`;
+    
+    // Make sure the iframe is visible (in case it's hidden)
+    document.getElementById('youtube-player').style.display = 'block';
 }
+
 // Poem lines
 const poemLines = [
     "你是人间的四月天，",
@@ -56,7 +32,8 @@ const poemLines = [
     "短发利落，独具魅力。",
     "夜之黑暗中，你是唯一光亮。",
     "那一日，命运悄然指引，",
-    "我们在时光的转角相遇。",
+    "我们在时光的转角相遇。", 
+    "布城一遇，", 
     "目光交汇，似有星辰闪烁，",
     "从此，我的世界多了一抹绚丽。",
     "你是人间的四月天，",
@@ -105,14 +82,16 @@ function displayPoem() {
         currentLine++;
 
         // Display next line after 8 seconds (5 seconds visible, 3 seconds delay)
-        setTimeout(displayPoem, 4000);
+        setTimeout(displayPoem, 8000);
     } else {
         // Loop back to the first line when the poem is complete
         currentLine = 0;
-        setTimeout(displayPoem, 4000);
+        setTimeout(displayPoem, 8000);
     }
 }
 
 // Start displaying the poem after a short initial delay
 setTimeout(displayPoem, 2000);
 
+// Trigger falling petals every second
+setInterval(createPetal, 1000);
