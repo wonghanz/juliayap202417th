@@ -8,27 +8,31 @@
 </head>
 <body>
     <div class="container">
-        <!-- Christian blessing -->
+        <!-- Birthday and Christian blessing -->
         <h1>Happy 17th Birthday, Julia Yap Hui Yun!</h1>
         <p class="blessing">“May the Lord bless you and keep you.” – Numbers 6:24</p>
 
         <!-- SPM promise section -->
         <p class="promise">After SPM, if you want me, I'll find you. Our story doesn't end here, it just begins.</p>
-        
+
         <!-- Support and encouragement section -->
         <p class="support">Take care of yourself, don't get depressed anymore. You are stronger than you think.</p>
 
         <!-- I love you message -->
         <h2 class="love-message">I love you, Julia.</h2>
-        
-        <!-- Background music -->
-        <audio autoplay loop>
-            <source src="music/chinese-song.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+
+        <!-- Buttons to choose the music -->
+        <div class="music-buttons">
+            <button onclick="playSong('chinese-song.mp3')">Play Chinese Song</button>
+            <button onclick="playSong('piano.mp3')">Play Piano Music</button>
+            <button onclick="playSong('christian.mp3')">Play Christian Song</button>
+        </div>
+
+        <!-- Audio player (hidden by default) -->
+        <audio id="audio-player" controls hidden></audio>
     </div>
 
-    <!-- JavaScript for additional interactive features -->
+    <!-- JavaScript for music control -->
     <script src="script.js"></script>
 </body>
 </html>
