@@ -54,3 +54,16 @@ h1 {
     0% { transform: translateY(-100px); }
     100% { transform: translateY(100vh); }
 }
+/* Flower petal style */
+.petal {
+    position: absolute;
+    top: -50px;
+    font-size: 12px;
+    background-image: url('images/petal.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
