@@ -95,15 +95,73 @@ audio {
     animation: floatUp 6s ease-in-out infinite;
 }
 
-/* Petal float animation */
+.birthday-animation {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.flower {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 50px;
+    background: url('flower.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.flower:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.flower:nth-child(2) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.flower:nth-child(3) {
+    left: 80%;
+    animation-delay: 4s;
+}
+
+.birthday-message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 8s ease-in-out infinite;
+}
+
+/* Animation for the floating flowers */
 @keyframes floatUp {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-300px);
         opacity: 1;
     }
     100% {
-        transform: translateY(-800px) rotate(360deg);
+        transform: translateY(-600px);
         opacity: 0;
+    }
+}
+
+/* Animation for fading in and out the birthday message */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
     }
 }
 
