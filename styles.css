@@ -79,7 +79,7 @@ audio {
 /* Poem styling */
 #poem {
     font-size: 1.5em;
-    color: #333;
+    color: #FFC0CB;
     font-style: italic;
     margin-top: 30px;
     min-height: 50px; /* Ensure the space remains when no text is displayed */
