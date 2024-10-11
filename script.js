@@ -13,17 +13,21 @@ function createPetal() {
     }, 5000);
 }
 
-// Create petals every 500 milliseconds
-setInterval(createPetal, 500);
 // Get the audio player element
 const audioPlayer = document.getElementById('audio-player');
 
 // Function to play the selected song
-function playSong(songFile) {
-    // Update the audio player source to the selected song
-    audioPlayer.src = `music/${songFile}`;
+function playSong(songUrl) {
+    // Stop any currently playing audio
+    if (!audioPlayer.paused) {
+        audioPlayer.pause();
+    }
+
+    // Update the audio player source to the selected song from Google Drive
+    audioPlayer.src = songUrl;
     
     // Unhide the player and play the song
     audioPlayer.hidden = false;
-    audioPlayer.play();
+    audioPlayer.load();  // Load the new audio file
+    audioPlayer.play();  // Start playing the new song
 }
