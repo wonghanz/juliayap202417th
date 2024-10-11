@@ -84,4 +84,26 @@ audio {
     margin-top: 30px;
     min-height: 50px; /* Ensure the space remains when no text is displayed */
 }
+/* Flower animation */
+.petal {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 50px;
+    background: url('image/flower.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+/* Petal float animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
 
