@@ -17,21 +17,20 @@
 
         <h2 class="love-message">Julia, you are the best ❤️‍🔥💞💝.</h2>
 
-        <!-- Poem Display Area -->
-        <div class="poem" id="poem"></div>
-
         <!-- Buttons to choose the music -->
         <div class="music-buttons">
-            <button onclick="playSong('https://drive.google.com/uc?export=download&id=1fTcZPYWPVNml0G-TdZD3MZ3HDeo6g8y5')">Play Chinese Song</button>
-            <button onclick="playSong('https://drive.google.com/uc?export=download&id=18MhuWrt0nWcGyfTRlj-FGSLwafFDsLAB')">Play Piano Music</button>
-            <button onclick="playSong('https://drive.google.com/uc?export=download&id=1qCHqlAqfSMpP1FFHae9AL48H_vrhIKG8')">Play Christian Song</button>
+            <button onclick="playYouTube('aN-LYMsVw9M')">Play Chinese Song</button>
+            <button onclick="playYouTube('VKKecVRlfbU')">Play Christian Song</button>
+            <button onclick="playYouTube('lCOF9LN_Zxs')">Play Piano Music</button>
         </div>
 
-        <!-- Audio player (hidden by default) -->
-        <audio id="audio-player" controls hidden></audio>
+        <!-- YouTube video player (hidden by default) -->
+        <div id="youtube-player" style="display:none;">
+            <iframe id="yt-iframe" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
+        </div>
     </div>
 
-    <!-- JavaScript for music and poem control -->
+    <!-- JavaScript for music control -->
     <script src="script.js"></script>
 </body>
 </html>
