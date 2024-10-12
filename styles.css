@@ -1,5 +1,8 @@
 /* Basic page styling */
 body {
+    overflow: hidden; /* Prevents scrolling */
+    margin: 0; /* Remove default margin */
+    background-color: #f0f0f0; /* Optional background color */
     font-family: 'Arial', sans-serif;
     background-color: #fff8f0;
     color: #333;
@@ -138,7 +141,6 @@ body {
         bottom: 100%; /* End above the screen */
         opacity: 0; /* Fade out */
     }
-}
 }
 
 /* Birthday message animation */
