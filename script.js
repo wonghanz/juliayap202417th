@@ -92,6 +92,7 @@ function displayPoem() {
 // Start displaying the poem after a short initial delay
 setTimeout(displayPoem, 2000);
 // Function to create and animate the balloon
+// Function to create and animate the balloon
 function createBalloon() {
     const balloon = document.getElementById('balloon');
     balloon.style.display = 'block'; // Make the balloon visible
