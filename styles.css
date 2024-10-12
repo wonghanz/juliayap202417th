@@ -107,13 +107,16 @@ audio {
 
 .flower {
     position: absolute;
-    bottom: -100px;
+    top: 50%; /* Moves it to the middle vertically */
+    left: 50%; /* Moves it to the center horizontally */
+    transform: translate(-50%, -50%); /* Centers it exactly */
     width: 50px;
     height: 50px;
     background: url('image/flower.png') no-repeat center/contain;
     opacity: 0.8;
     animation: floatUp 6s ease-in-out infinite;
 }
+
 
 .flower:nth-child(1) {
     left: 20%;
