@@ -82,16 +82,16 @@ function displayPoem() {
         currentLine++;
 
         // Display next line after 8 seconds (5 seconds visible, 3 seconds delay)
-        setTimeout(displayPoem, 2000);
+        setTimeout(displayPoem, 4000);
     } else {
         // Loop back to the first line when the poem is complete
         currentLine = 0;
-        setTimeout(displayPoem, 2000);
+        setTimeout(displayPoem, 4000);
     }
 }
 
 // Start displaying the poem after a short initial delay
-setTimeout(displayPoem, 2000);
+setTimeout(displayPoem, 3000);
 
 
 function createFlower() {
