@@ -106,6 +106,15 @@ audio {
 }
 
 /* Balloon styling */
+/* Balloon container */
+.balloons {
+    position: relative; /* Allows absolute positioning of balloons */
+    overflow: hidden; /* Prevents balloons from overflowing the container */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Balloon styles */
 .balloon {
     position: absolute;
     bottom: -100px; /* Start off screen */
@@ -119,9 +128,7 @@ audio {
     opacity: 1; /* Fully visible */
     animation: floatUp 5s ease-in forwards; /* Animation */
 }
-.balloons {
-    pointer-events: none; /* Prevent interaction with the balloons */
-}
+
 /* Animation keyframes */
 @keyframes floatUp {
     0% {
