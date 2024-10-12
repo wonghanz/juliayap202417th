@@ -7,33 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="birthday-animation">
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-    </div>
-
     <div class="container">
         <h1>Happy 17th Birthday, Julia Yap Hui Yun!</h1>
         <p class="blessing">“May the Lord bless you and keep you.” – Numbers 6:24</p>
+
         <p class="promise">After SPM, if you want me, I'll find you. Our story doesn't end here, it just begins.</p>
+
         <p class="support">Take care of yourself, don't get depressed anymore. You are stronger than you think.</p>
+
         <h2 class="love-message">Julia, you are the best ❤️‍🔥💞💝.</h2>
-        <!-- Poem Display Area -->
-        <div class="poem" id="poem"></div>
+
+        <!-- Poem display area -->
+        <div id="poem" style="font-size: 24px; text-align: center; margin-top: 20px;"></div>
+
         <!-- Buttons to choose the music -->
         <div class="music-buttons">
             <button onclick="playYouTube('aN-LYMsVw9M')">Play Chinese Song</button>
             <button onclick="playYouTube('VKKecVRlfbU')">Play Christian Song</button>
             <button onclick="playYouTube('lCOF9LN_Zxs')">Play Piano Music</button>
         </div>
+
         <!-- YouTube video player (hidden by default) -->
         <div id="youtube-player" style="display:none;">
             <iframe id="yt-iframe" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
         </div>
     </div>
 
-    <!-- JavaScript for music control -->
+    <!-- JavaScript for music control and poem display -->
     <script src="script.js"></script>
 </body>
 </html>
