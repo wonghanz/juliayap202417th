@@ -120,7 +120,7 @@ function createBalloons(count) {
 
 // Call the function to create balloons when the page loads
 window.onload = () => {
-    createBalloons(200); // Adjust the number here to create more or fewer balloons
+    createBalloons(520); // Adjust the number here to create more or fewer balloons
 };
 
 // CSS for balloon animation
