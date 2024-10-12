@@ -92,16 +92,24 @@ function displayPoem() {
 // Start displaying the poem after a short initial delay
 setTimeout(displayPoem, 2000);
 // Function to create and animate the balloon
-// Function to create and animate the balloon
 function createBalloon() {
     const balloon = document.getElementById('balloon');
     balloon.style.display = 'block'; // Make the balloon visible
+
+    // Trigger animation
+    balloon.classList.add('animate');
+
+    // Remove balloon after animation ends
+    balloon.addEventListener('animationend', () => {
+        balloon.style.display = 'none'; // Hide the balloon after it disappears
+    });
 }
 
 // Trigger the balloon animation when the window loads
 window.onload = function() {
     createBalloon();
 };
+
 
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
