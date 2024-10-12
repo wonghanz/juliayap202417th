@@ -154,7 +154,6 @@ audio {
     }
 }
 
-/* Quote box styling */
 .quote-box {
     background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Soft gradient background */
     border-radius: 12px; /* Rounded corners */
