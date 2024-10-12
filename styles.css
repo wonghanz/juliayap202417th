@@ -117,19 +117,6 @@ audio {
     animation: floatUp 6s ease-in-out infinite;
 }
 
-
-.flower {
-    position: absolute;
-    top: 50%; /* Adjust based on where you want the flower to appear */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background: url('image/flower.png') no-repeat center/contain;
-    opacity: 0;
-    animation: fadeIn 2s forwards, floatUp 6s ease-in-out infinite;
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -140,17 +127,6 @@ audio {
 @keyframes floatUp {
     0%, 100% { transform: translate(-50%, -50%) translateY(0); }
     50% { transform: translate(-50%, -50%) translateY(-10px); }
-}
-
-.birthday-message {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.5rem;
-    color: #ff69b4;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    animation: fadeInOut 8s ease-in-out infinite;
 }
 
 /* Animation for the floating flowers */
@@ -167,6 +143,18 @@ audio {
         transform: translateY(-600px);
         opacity: 0;
     }
+}
+
+/* Birthday message animation */
+.birthday-message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 8s ease-in-out infinite;
 }
 
 /* Animation for fading in and out the birthday message */
