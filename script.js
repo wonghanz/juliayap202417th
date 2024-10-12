@@ -93,15 +93,15 @@ function displayPoem() {
 setTimeout(displayPoem, 2000);
 // Function to create and animate balloons
 function createBalloons(count) {
-    const balloonContainer = document.getElementById('balloon');
+    const balloonContainer = document.getElementById('balloon-container'); // Make sure this matches your HTML
 
     for (let i = 0; i < count; i++) {
         const balloon = document.createElement('div');
         balloon.className = 'balloon';
+
         // Set a random horizontal position
         balloon.style.left = Math.random() * window.innerWidth + 'px';
-        // Start with a random vertical position below the view
-        balloon.style.bottom = '-100px';
+
         // Append the balloon to the container
         balloonContainer.appendChild(balloon);
 
@@ -122,7 +122,6 @@ function createBalloons(count) {
 window.onload = () => {
     createBalloons(520); // Change this number for more or fewer balloons
 };
-
 
 
 // Trigger falling petals every second
