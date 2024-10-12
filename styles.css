@@ -105,43 +105,33 @@ audio {
     background-color: transparent;
 }
 
-.flower {
+body {
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.balloon {
     position: absolute;
-    top: 50%; /* Moves it to the middle vertically */
-    left: 50%; /* Moves it to the center horizontally */
-    transform: translate(-50%, -50%); /* Centers it exactly */
-    width: 50px;
-    height: 50px;
-    background: url('image/flower.png') no-repeat center/contain;
-    opacity: 0.8;
-    animation: floatUp 6s ease-in-out infinite;
+    bottom: -100px; /* Start off screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    background-image: url('images/flower.png'); /* Path to your balloon image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px; /* Adjust based on your image size */
+    height: 100px; /* Adjust based on your image size */
+    opacity: 1; /* Fully visible */
+    animation: floatUp 5s ease-in forwards; /* Animation */
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Floating animation */
-@keyframes floatUp {
-    0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-    50% { transform: translate(-50%, -50%) translateY(-10px); }
-}
-
-/* Animation for the floating flowers */
+/* Animation keyframes */
 @keyframes floatUp {
     0% {
-        transform: translateY(0);
-        opacity: 0.9;
-    }
-    50% {
-        transform: translateY(-300px);
-        opacity: 1;
+        bottom: -100px; /* Start below the screen */
+        opacity: 1; /* Fully visible */
     }
     100% {
-        transform: translateY(-600px);
-        opacity: 0;
+        bottom: 100%; /* End above the screen */
+        opacity: 0; /* Fade out */
     }
 }
 
