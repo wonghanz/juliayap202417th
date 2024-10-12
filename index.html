@@ -3,55 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Surprise</title>
+    <title>Happy 17th Birthday, Julia!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="birthday-animation">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
 
-    <!-- Container for the main text -->
     <div class="container">
-        <h1>Happy Birthday, Julia!</h1>
-        <h2 class="love-message">You are the light of my life</h2>
-        <p class="blessing">May your day be as bright and special as you are to me.</p>
-        <p class="promise">I promise to support and love you through all life's adventures.</p>
-        <p class="support">Thank you for being my guiding star and constant joy.</p>
-        
-        <!-- Music buttons -->
+        <h1>Happy 17th Birthday, Julia Yap Hui Yun!</h1>
+        <p class="blessing">“May the Lord bless you and keep you.” – Numbers 6:24</p>
+        <p class="promise">After SPM, if you want me, I'll find you. Our story doesn't end here, it just begins.</p>
+        <p class="support">Take care of yourself, don't get depressed anymore. You are stronger than you think.</p>
+        <h2 class="love-message">Julia, you are the best ❤️‍🔥💞💝.</h2>
+        <!-- Poem Display Area -->
+        <div class="poem" id="poem"></div>
+        <!-- Buttons to choose the music -->
         <div class="music-buttons">
-            <button onclick="playMusic('track1.mp3')">Play Track 1</button>
-            <button onclick="playMusic('track2.mp3')">Play Track 2</button>
+            <button onclick="playYouTube('aN-LYMsVw9M')">Play Chinese Song</button>
+            <button onclick="playYouTube('VKKecVRlfbU')">Play Christian Song</button>
+            <button onclick="playYouTube('lCOF9LN_Zxs')">Play Piano Music</button>
         </div>
-        
-        <!-- Audio player -->
-        <audio id="audio-player" controls>
-            <source id="audio-source" src="" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <!-- Poem display -->
-        <div id="poem"></div>
-        
-        <!-- Trigger flower animation button -->
-        <button id="triggerFlower">Click me 😘😍</button>
-        
-        <!-- Flower Animation Container -->
-        <div class="birthday-animation">
-            <div class="flower"></div>
+        <!-- YouTube video player (hidden by default) -->
+        <div id="youtube-player" style="display:none;">
+            <iframe id="yt-iframe" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
         </div>
     </div>
 
-    <script>
-        function playMusic(track) {
-            document.getElementById('audio-source').src = track;
-            document.getElementById('audio-player').load();
-            document.getElementById('audio-player').play();
-        }
-
-        // Trigger flower animation
-        document.getElementById('triggerFlower').onclick = function() {
-            document.querySelector('.flower').style.opacity = 1;
-        };
-    </script>
-
+    <!-- JavaScript for music control -->
+    <script src="script.js"></script>
 </body>
 </html>
