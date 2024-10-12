@@ -113,3 +113,23 @@ window.onload = function() {
 
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
+// Array of Christian quotes
+const quotes = [
+    "“Hope is being able to see that there is light despite all of the darkness.” – Desmond Tutu",
+    "“The best way to find yourself is to lose yourself in the service of others.” – Mahatma Gandhi",
+    "“For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.” – Jeremiah 29:11",
+    "“You are never too old to set another goal or to dream a new dream.” – C.S. Lewis",
+    "“Faith is taking the first step even when you don't see the whole staircase.” – Martin Luther King Jr.",
+    "“Joy is the simplest form of gratitude.” – Karl Barth",
+    "“This is the day that the Lord has made; let us rejoice and be glad in it.” – Psalm 118:24"
+];
+
+// Function to get the quote of the day
+function getQuoteOfTheDay() {
+    const today = new Date();
+    const index = today.getDate() % quotes.length; // Get a quote based on the day of the month
+    return quotes[index];
+}
+
+// Display the quote on page load
+document.getElementById('daily-quote').innerText = getQuoteOfTheDay();
