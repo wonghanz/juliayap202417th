@@ -91,52 +91,37 @@ function displayPoem() {
 
 // Start displaying the poem after a short initial delay
 setTimeout(displayPoem, 2000);
-// Function to create a balloon
-function createBalloon() {
-    const balloon = document.createElement('div');
-    balloon.className = 'balloon';
-    balloon.style.position = 'absolute';
-    balloon.style.width = Math.random() * (60 - 30) + 30 + 'px'; // Random width between 30px and 60px
-    balloon.style.height = balloon.style.width; // Keep balloons square
-    balloon.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Random color for balloons
-    balloon.style.borderRadius = '50%';
-    balloon.style.bottom = '0'; // Start at the bottom
-    balloon.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
-    balloon.style.animation = `float ${Math.random() * (5 - 3) + 3}s linear forwards`; // Random float time
-    document.body.appendChild(balloon);
-
-    // Remove the balloon after it has floated up
-    balloon.addEventListener('animationend', () => {
-        balloon.remove();
-    });
-}
-
-// Function to create multiple balloons
+// Function to create and animate balloons
 function createBalloons(count) {
+    const balloonContainer = document.getElementById('balloon');
+
     for (let i = 0; i < count; i++) {
-        createBalloon();
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        // Set a random horizontal position
+        balloon.style.left = Math.random() * window.innerWidth + 'px';
+        // Start with a random vertical position below the view
+        balloon.style.bottom = '-100px';
+        // Append the balloon to the container
+        balloonContainer.appendChild(balloon);
+
+        // Animate the balloon
+        setTimeout(() => {
+            balloon.style.transition = 'transform 4s ease-out'; // Transition duration
+            balloon.style.transform = 'translateY(-150vh)'; // Move upwards
+
+            // Remove the balloon from DOM after it reaches the top
+            setTimeout(() => {
+                balloonContainer.removeChild(balloon);
+            }, 4000); // Match this time with the animation duration
+        }, Math.random() * 2000); // Random delay for each balloon to start
     }
 }
 
 // Call the function to create balloons when the page loads
 window.onload = () => {
-    createBalloons(520); // Adjust the number here to create more or fewer balloons
+    createBalloons(520); // Change this number for more or fewer balloons
 };
-
-// CSS for balloon animation
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes float {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-100vh); }
-    }
-    .balloon {
-        animation: float 3s linear forwards; /* Default float animation */
-        opacity: 0.7; /* Slightly transparent */
-        pointer-events: none; /* Prevent mouse events on balloons */
-    }
-`;
-document.head.appendChild(style);
 
 
 
