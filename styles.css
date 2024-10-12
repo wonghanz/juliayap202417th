@@ -164,3 +164,20 @@ body {
         opacity: 1;
     }
 }
+.quote-box {
+    background-color: #e0f7fa; /* Light blue */
+    border: 2px solid #00796b; /* Teal */
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.quote-box h2 {
+    color: #004d40; /* Darker teal */
+}
+
+.quote-box p {
+    font-size: 1.2em;
+    color: #00332d; /* Darkest teal */
+}
