@@ -76,14 +76,16 @@ audio {
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 /* Poem styling */
 #poem {
     font-size: 1.5em;
-    color: ##333;
+    color: #333;
     font-style: italic;
     margin-top: 30px;
     min-height: 50px; /* Ensure the space remains when no text is displayed */
 }
+
 /* Flower animation */
 .petal {
     position: absolute;
@@ -164,4 +166,3 @@ audio {
         opacity: 1;
     }
 }
-
