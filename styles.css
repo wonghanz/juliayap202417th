@@ -119,7 +119,9 @@ audio {
     opacity: 1; /* Fully visible */
     animation: floatUp 5s ease-in forwards; /* Animation */
 }
-
+.balloons {
+    pointer-events: none; /* Prevent interaction with the balloons */
+}
 /* Animation keyframes */
 @keyframes floatUp {
     0% {
