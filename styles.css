@@ -2,12 +2,9 @@
 body {
     overflow: hidden; /* Prevents scrolling */
     margin: 0; /* Remove default margin */
-    background-color: #f0f0f0; /* Optional background color */
+    background-color: #fff8f0; /* Background color */
     font-family: 'Arial', sans-serif;
-    background-color: #fff8f0;
     color: #333;
-    margin: 0;
-    padding: 0;
     background-image: url('images/flowers-bg.jpeg'); /* Add the flower background */
     background-size: cover;  /* Use 'cover' for full coverage */
     background-position: center; /* Center the image */
@@ -108,15 +105,7 @@ audio {
     background-color: transparent;
 }
 
-body {
-    overflow: hidden; /* Prevents scrolling */
-}
-
-    overflow: hidden; /* Prevents scrolling */
-    margin: 0; /* Remove default margin */
-    background-color: #f0f0f0; /* Optional background color */
-}
-
+/* Balloon styling */
 .balloon {
     position: absolute;
     bottom: -100px; /* Start off screen */
@@ -164,6 +153,8 @@ body {
         opacity: 1;
     }
 }
+
+/* Quote box styling */
 .quote-box {
     background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Soft gradient background */
     border-radius: 12px; /* Rounded corners */
