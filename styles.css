@@ -95,7 +95,7 @@ audio {
     bottom: -100px;
     width: 50px;
     height: 50px;
-    background: url('image/flower.png') no-repeat center/contain;
+    background: url('image/f.png') no-repeat center/contain;
     opacity: 0.8;
     animation: floatUp 6s ease-in-out infinite;
 }
@@ -122,7 +122,7 @@ body {
     bottom: -100px; /* Start off screen */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%);
-    background-image: url('images/petal.png'); /* Path to your balloon image */
+    background-image: url('images/f.png'); /* Path to your balloon image */
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px; /* Adjust based on your image size */
