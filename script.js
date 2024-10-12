@@ -114,22 +114,24 @@ window.onload = function() {
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
 // Array of Christian quotes
+// JavaScript for the Quote of the Day functionality
 const quotes = [
-    "“Hope is being able to see that there is light despite all of the darkness.” – Desmond Tutu",
-    "“The best way to find yourself is to lose yourself in the service of others.” – Mahatma Gandhi",
+    "“The future belongs to those who believe in the beauty of their dreams.” – Eleanor Roosevelt",
     "“For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.” – Jeremiah 29:11",
-    "“You are never too old to set another goal or to dream a new dream.” – C.S. Lewis",
-    "“Faith is taking the first step even when you don't see the whole staircase.” – Martin Luther King Jr.",
+    "“Every day may not be good, but there is something good in every day.” – Alice Morse Earle",
+    "“This is the day that the Lord has made; let us rejoice and be glad in it.” – Psalm 118:24",
     "“Joy is the simplest form of gratitude.” – Karl Barth",
-    "“This is the day that the Lord has made; let us rejoice and be glad in it.” – Psalm 118:24"
+    "“With God, all things are possible.” – Matthew 19:26",
+    "“Your present circumstances don't determine where you can go; they merely determine where you start.” – Nido Qubein"
 ];
 
-// Function to get the quote of the day
-function getQuoteOfTheDay() {
-    const today = new Date();
-    const index = today.getDate() % quotes.length; // Get a quote based on the day of the month
-    return quotes[index];
+// Function to set a random quote
+function setQuote() {
+    const quoteElement = document.getElementById('daily-quote');
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.innerText = quotes[randomIndex];
 }
 
-// Display the quote on page load
-document.getElementById('daily-quote').innerText = getQuoteOfTheDay();
+// Call the function to set the quote when the page loads
+window.onload = setQuote;
+
