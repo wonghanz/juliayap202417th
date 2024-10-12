@@ -32,8 +32,7 @@ const poemLines = [
     "短发利落，独具魅力。",
     "夜之黑暗中，你是唯一光亮。",
     "那一日，命运悄然指引，",
-    "我们在时光的转角相遇。", 
-    "布城一遇，", 
+    "我们在时光的转角相遇。",
     "目光交汇，似有星辰闪烁，",
     "从此，我的世界多了一抹绚丽。",
     "你是人间的四月天，",
@@ -86,28 +85,12 @@ function displayPoem() {
     } else {
         // Loop back to the first line when the poem is complete
         currentLine = 0;
-        setTimeout(displayPoem, 4000);
+        setTimeout(displayPoem, 2000);
     }
 }
 
 // Start displaying the poem after a short initial delay
-setTimeout(displayPoem, 3000);
-
-
-function createFlower() {
-    const flower = document.createElement('div');
-    flower.classList.add('flower');
-    flower.style.left = Math.random() * 100 + 'vw';
-    document.querySelector('.birthday-animation').appendChild(flower);
-
-    setTimeout(() => {
-        flower.remove();
-    }, 6000); // Flower disappears after 6 seconds
-}
-
-// Generate new flowers every 3 seconds
-setInterval(createFlower, 3000);
-
+setTimeout(displayPoem, 2000);
 
 // Trigger falling petals every second
-setInterval(createPetal, 1000);
+setInterval(createPetal, 2000);
