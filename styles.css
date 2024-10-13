@@ -1,6 +1,7 @@
 /* Basic page styling */
 body {
-    overflow: hidden; /* Prevents scrolling */
+    height: 200vh; /* Increase height to make the page scrollable */
+    overflow-y: scroll; /* Always show scroll bar */ /* Prevents scrolling */
     margin: 0; /* Remove default margin */
     background-color: #fff8f0; /* Background color */
     font-family: 'Arial', sans-serif;
@@ -193,31 +194,36 @@ audio {
 }
 /* Add this to your existing CSS file */
 
+/* Add this to your existing CSS file */
+
+/* Slideshow container */
 .slideshow-container {
     position: relative;
-    max-width: 800px; /* Adjust based on your design */
-    margin: auto;
-    border-radius: 15px; /* Rounded corners */
-    overflow: hidden; /* Hides overflow */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    max-width: 400px; /* Smaller width */
+    margin: 20px auto; /* Center the slideshow and add margin */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Hide all slides by default */
 .mySlides {
-    display: none; /* Hide all slides by default */
+    display: none;
 }
 
 img {
-    width: 100%; /* Responsive image */
-    border-radius: 15px; /* Rounded corners for images */
+    width: 100%; /* Ensure the image takes full width of the container */
+    border-radius: 10px;
 }
 
-/* Next and previous buttons */
+/* Buttons to control the slideshow */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     padding: 16px;
+    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -232,6 +238,15 @@ img {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background on hover */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Fade animation */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
