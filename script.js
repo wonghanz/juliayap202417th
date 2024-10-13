@@ -124,8 +124,13 @@ function createBalloons(count) {
 
 // Call the function to create balloons on page load
 window.onload = () => {
-    setInterval(() => createBalloons(10), 1000); // Create balloons continuously
+    setQuote();
+    createFireworks();
+    setInterval(() => createBalloons(10), 1000);
+    setInterval(createPetal, 2000);
+    displayPoem(); // Start displaying the poem
 };
+
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
 // Array of Christian quotes
@@ -148,7 +153,7 @@ function setQuote() {
 }
 
 // Call the function to set the quote when the page loads
-window.onload = setQuote;
+
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -241,7 +246,4 @@ function createFireworks() {
 }
 
 // Call the function when the page loads or at the desired moment
-window.onload = () => {
-    createFireworks();
-};
 
