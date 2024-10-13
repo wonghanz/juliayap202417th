@@ -6,7 +6,7 @@ body {
     background-color: #fff8f0; /* Background color */
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-image: url('images/flowers-bg.jpeg'); /* Add the flower background */
+    background-image: url('images/a.jpeg'); /* Add the flower background */
     background-size: cover;  /* Use 'cover' for full coverage */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repetition */
