@@ -199,7 +199,7 @@ audio {
 /* Slideshow container */
 .slideshow-container {
     position: relative;
-    max-width: 400px; /* Smaller width */
+    max-width: 300px; /* Smaller width */
     margin: 20px auto; /* Center the slideshow and add margin */
     overflow: hidden;
     border-radius: 10px;
