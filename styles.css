@@ -1,6 +1,6 @@
 /* Basic page styling */
 body {
-    height: 100vh; /* Increase height to make the page scrollable */
+    height: 80vh; /* Increase height to make the page scrollable */
     overflow-y: scroll; /* Always show scroll bar */ /* Prevents scrolling */
     margin: 0; /* Remove default margin */
     background-color: #fff8f0; /* Background color */
