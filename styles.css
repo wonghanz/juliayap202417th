@@ -319,7 +319,7 @@ audio {
     font-size: 400px;
     cursor: pointer;
     transition: transform 0.3s;
-    position: fixed; /* Keep it in a fixed position */
+    position: absolute; /* Keep it in a fixed position */
     bottom: 20px; /* Adjust position */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
