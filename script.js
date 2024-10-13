@@ -93,13 +93,13 @@ function displayPoem() {
 setTimeout(displayPoem, 2000);
 // Function to create and animate balloons
 function createBalloons(count) {
-    const balloonContainer = document.getElementById('balloon-container');
+    const balloonContainer = document.getElementById('balloon-container'); // Ensure this ID matches in HTML
 
     for (let i = 0; i < count; i++) {
         const balloon = document.createElement('div');
         balloon.className = 'balloon';
 
-        // Set a random horizontal position
+        // Set a random horizontal position for the balloon
         balloon.style.left = Math.random() * window.innerWidth + 'px';
 
         // Append the balloon to the container
@@ -107,22 +107,22 @@ function createBalloons(count) {
 
         // Animate the balloon
         setTimeout(() => {
-            balloon.style.transition = 'transform 4s ease-out'; // Transition duration
-            balloon.style.transform = 'translateY(-150vh)'; // Move upwards
+            balloon.style.transition = 'transform 5s ease-out, opacity 2s ease-out'; // Transition for both movement and fading
+            balloon.style.transform = 'translateY(-200vh)'; // Move upwards
+            balloon.style.opacity = '0'; // Fade out
 
             // Remove the balloon from DOM after it reaches the top
             setTimeout(() => {
                 balloonContainer.removeChild(balloon);
-            }, 4000); // Match this time with the animation duration
-        }, Math.random() * 2000); // Random delay for each balloon to start
+            }, 5000); // Adjust this to match the animation duration
+        }, Math.random() * 1000); // Add random delay for each balloon
     }
 }
-window.onload = () => {
-    setQuote();
-    createBalloons(520); // Create 520 balloons
-    setTimeout(displayPoem, 2000); // Start displaying the poem after a delay
-};
 
+// Call the function to create balloons on page load
+window.onload = () => {
+    createBalloons(3); // Set the count as needed
+};
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
 // Array of Christian quotes
