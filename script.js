@@ -160,19 +160,17 @@ function plusSlides(n) {
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 } // Loop back to the first slide
-    if (n < 1) { slideIndex = slides.length } // Loop back to the last slide
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     
-    // Hide all slides
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.display = "none"; // Hide all slides
     }
     
-    // Show the current slide
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].style.display = "block"; // Show the current slide
 }
 
-// Automatic slideshow (optional)
+// Automatic slideshow
 let autoSlideIndex = 0;
 autoSlides();
 
@@ -180,9 +178,8 @@ function autoSlides() {
     let i;
     const slides = document.getElementsByClassName("mySlides");
     
-    // Hide all slides
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.display = "none"; // Hide all slides
     }
     
     autoSlideIndex++;
@@ -191,5 +188,6 @@ function autoSlides() {
     slides[autoSlideIndex - 1].style.display = "block";
     setTimeout(autoSlides, 5000); // Change slide every 5 seconds
 }
+
 
 
