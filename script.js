@@ -224,45 +224,24 @@ const messages = [
     "Julia Yap 最漂亮"
 ];
 
-// Get elements
-const cake = document.getElementById('cake');
-const fireworksContainer = document.getElementById('fireworks-container');
-
-// Function to randomly position the cake
-function randomPosition() {
-    const x = Math.random() * (window.innerWidth - 100); // Adjust for cake size
-    const y = Math.random() * (window.innerHeight - 100); // Adjust for cake size
-    cake.style.left = `${x}px`;
-    cake.style.top = `${y}px`;
+function createFireworks() {
+    const fireworksMessages = document.querySelectorAll('.fireworks');
+    
+    fireworksMessages.forEach((firework, index) => {
+        setTimeout(() => {
+            firework.style.opacity = 1; // Make the text visible
+            firework.style.animation = `explode 1s forwards`; // Start animation
+            
+            // Remove the text after the animation
+            setTimeout(() => {
+                firework.style.opacity = 0; // Fade out
+            }, 1000); // Match with animation duration
+        }, index * 1000); // Stagger the appearance
+    });
 }
 
-// Function to show fireworks (messages)
-function createFireworkMessage(x, y) {
-    const fireworkMessage = document.createElement('div');
-    fireworkMessage.classList.add('fireworks');
-    fireworkMessage.style.left = `${x}px`;
-    fireworkMessage.style.top = `${y}px`;
+// Call the function when the page loads or at the desired moment
+window.onload = () => {
+    createFireworks();
+};
 
-    // Choose a random message
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    fireworkMessage.innerText = messages[randomIndex];
-
-    // Add the firework message to the container
-    fireworksContainer.appendChild(fireworkMessage);
-
-    // Remove the message after the animation is done
-    setTimeout(() => {
-        fireworksContainer.removeChild(fireworkMessage);
-    }, 1000); // Match this with the animation duration
-}
-
-// Add click event listener
-cake.addEventListener('click', (event) => {
-    console.log("Cake clicked!"); // Debugging log
-    const x = event.clientX;
-    const y = event.clientY;
-    createFireworkMessage(x, y);
-});
-
-// Randomly position the cake on load
-randomPosition();
