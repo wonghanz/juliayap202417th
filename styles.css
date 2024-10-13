@@ -243,3 +243,36 @@ audio {
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
+
+.hidden-note {
+    font-size: 2rem;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hidden-note:hover {
+    transform: scale(1.2);
+}
+
+#final-surprise {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #ff6f61;
+    border-radius: 10px;
+}
+
+#play-message {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#play-message:hover {
+    background-color: #ff4d3d;
+}
