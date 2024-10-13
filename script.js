@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         voiceMessage.play();
     });
 });
-// List of random messages
+// Messages for the fireworks
 const messages = [
     "Julia Yap 生日快乐",
     "Julia Yap 17岁快乐",
@@ -242,7 +242,7 @@ function createFireworkMessage(x, y) {
     fireworkMessage.classList.add('fireworks');
     fireworkMessage.style.left = `${x}px`;
     fireworkMessage.style.top = `${y}px`;
-    
+
     // Choose a random message
     const randomIndex = Math.floor(Math.random() * messages.length);
     fireworkMessage.innerText = messages[randomIndex];
@@ -258,15 +258,11 @@ function createFireworkMessage(x, y) {
 
 // Add click event listener
 cake.addEventListener('click', (event) => {
-    // Get the position of the click
+    console.log("Cake clicked!"); // Debugging log
     const x = event.clientX;
     const y = event.clientY;
-
-    // Create fireworks message at the click position
     createFireworkMessage(x, y);
 });
 
 // Randomly position the cake on load
 randomPosition();
-
-
