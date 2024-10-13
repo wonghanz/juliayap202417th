@@ -148,46 +148,48 @@ function setQuote() {
 // Call the function to set the quote when the page loads
 window.onload = setQuote;
 
-let slideIndex = 0; // Initialize the slide index
-showSlides(); // Show the initial slide
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
 // Function to show slides
-function showSlides() {
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 } // Loop back to the first slide
+    if (n < 1) { slideIndex = slides.length } // Loop back to the last slide
+    
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    // Show the current slide
+    slides[slideIndex - 1].style.display = "block";
+}
+
+// Automatic slideshow (optional)
+let autoSlideIndex = 0;
+autoSlides();
+
+function autoSlides() {
     let i;
     const slides = document.getElementsByClassName("mySlides");
     
     // Hide all slides
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        slides[i].style.display = "none";
     }
     
-    slideIndex++; // Increment the slide index
-    if (slideIndex > slides.length) { slideIndex = 1 } // Reset to first slide if past last
-
-    slides[slideIndex - 1].style.display = "block"; // Show current slide
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
-
-// Function to control the slide
-function plusSlides(n) {
-    slideIndex += n; // Increment or decrement slide index
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    if (slideIndex < 1) { slideIndex = slides.length; }
+    autoSlideIndex++;
+    if (autoSlideIndex > slides.length) { autoSlideIndex = 1 }
     
-    showSlidesManually();
-}
-
-// Function to manually show slides
-function showSlidesManually() {
-    let i;
-    const slides = document.getElementsByClassName("mySlides");
-    
-    // Hide all slides
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-
-    slides[slideIndex - 1].style.display = "block"; // Show current slide
+    slides[autoSlideIndex - 1].style.display = "block";
+    setTimeout(autoSlides, 5000); // Change slide every 5 seconds
 }
 
 
