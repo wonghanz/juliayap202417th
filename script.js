@@ -217,6 +217,60 @@ document.addEventListener("DOMContentLoaded", function () {
         voiceMessage.play();
     });
 });
+// script.js
+
+const messages = [
+    "Julia Yap 生日快乐",
+    "Julia Yap 17岁快乐",
+    "Julia Yap 最漂亮"
+];
+
+function celebrate() {
+    // Show random message
+    const messageElement = document.getElementById('message');
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    messageElement.innerText = messages[randomIndex];
+    messageElement.style.opacity = 1;
+
+    // Create fireworks
+    for (let i = 0; i < 5; i++) {
+        createFirework();
+    }
+
+    // Hide message after 3 seconds
+    setTimeout(() => {
+        messageElement.style.opacity = 0;
+    }, 3000);
+}
+
+function createFirework() {
+    const firework = document.createElement('div');
+    firework.classList.add('firework');
+    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    firework.style.width = '10px';
+    firework.style.height = '10px';
+    firework.style.position = 'absolute';
+    firework.style.left = Math.random() * window.innerWidth + 'px';
+    firework.style.bottom = '0';
+    firework.style.animation = 'firework-animation 1s forwards';
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+        firework.remove();
+    }, 1000);
+}
+
+// Add keyframes for fireworks animation
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(`
+    @keyframes firework-animation {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        50% { transform: translateY(-200px) scale(1.5); opacity: 0.7; }
+        100% { transform: translateY(-400px) scale(0); opacity: 0; }
+    }
+`, styleSheet.cssRules.length);
+
 
 
 
