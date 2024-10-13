@@ -93,35 +93,38 @@ function displayPoem() {
 setTimeout(displayPoem, 2000);
 // Function to create and animate balloons
 function createBalloons(count) {
-    const balloonContainer = document.getElementById('balloon-container'); // Ensure this ID matches in HTML
+    const balloonContainer = document.getElementById('balloon-container'); // Make sure this ID exists in HTML
 
     for (let i = 0; i < count; i++) {
         const balloon = document.createElement('div');
         balloon.className = 'balloon';
 
-        // Set a random horizontal position for the balloon
+        // Randomize balloon position and size
         balloon.style.left = Math.random() * window.innerWidth + 'px';
+        balloon.style.width = '30px';
+        balloon.style.height = '40px';
+        balloon.style.backgroundColor = 'rgba(255, 0, 0, 0.6)'; // Change this to adjust color
 
         // Append the balloon to the container
         balloonContainer.appendChild(balloon);
 
-        // Animate the balloon
+        // Animate the balloon upwards
         setTimeout(() => {
-            balloon.style.transition = 'transform 5s ease-out, opacity 2s ease-out'; // Transition for both movement and fading
-            balloon.style.transform = 'translateY(-200vh)'; // Move upwards
-            balloon.style.opacity = '0'; // Fade out
+            balloon.style.transition = 'transform 5s ease-out, opacity 2s ease-out';
+            balloon.style.transform = 'translateY(-200vh)';
+            balloon.style.opacity = '0';
 
-            // Remove the balloon from DOM after it reaches the top
+            // Remove the balloon after it disappears
             setTimeout(() => {
                 balloonContainer.removeChild(balloon);
-            }, 5000); // Adjust this to match the animation duration
-        }, Math.random() * 1000); // Add random delay for each balloon
+            }, 5000);
+        }, Math.random() * 1000);
     }
 }
 
 // Call the function to create balloons on page load
 window.onload = () => {
-    createBalloons(3); // Set the count as needed
+    setInterval(() => createBalloons(10), 1000); // Create balloons continuously
 };
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
