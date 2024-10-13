@@ -282,35 +282,46 @@ audio {
     transition: transform 0.2s;
 }
 
-.cake {
-    font-size: 400px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    position: absolute; /* Position the cake absolutely */
-}
-
-.cake:hover {
-    transform: scale(1.1);
+.fireworks-container {
+    position: absolute; /* Positioning relative to the parent */
+    top: 0; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    pointer-events: none; /* Prevent interaction */
 }
 
 .fireworks {
     position: absolute;
-    color: #ff4500;
-    font-size: 40px; /* Size of the fireworks text */
-    animation: explode 1s forwards; /* Animate explosion */
+    color: #ff4500; /* Color of the fireworks text */
+    font-size: 40px; /* Adjust size as necessary */
+    opacity: 0; /* Start invisible */
+    animation: explode 1s forwards; /* Trigger animation */
 }
 
+/* Animation keyframes for fireworks effect */
 @keyframes explode {
     0% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(1); /* Original size */
+        opacity: 1; /* Fully visible */
     }
     50% {
-        transform: scale(1.5);
-        opacity: 0.7;
+        transform: scale(2); /* Enlarge */
+        opacity: 1; /* Still visible */
     }
     100% {
-        transform: scale(0);
-        opacity: 0;
+        transform: scale(0); /* Fade out */
+        opacity: 0; /* Invisible */
     }
 }
+
+/* Cake styling */
+.cake {
+    font-size: 400px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: fixed; /* Keep it in a fixed position */
+    bottom: 20px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+}
+
