@@ -227,43 +227,46 @@ const messages = [
 // Get elements
 const cake = document.getElementById('cake');
 const fireworksContainer = document.getElementById('fireworks-container');
-const messageDisplay = document.getElementById('message');
 
-// Function to show fireworks
-function createFirework(x, y) {
-    const firework = document.createElement('div');
-    firework.classList.add('fireworks');
-    firework.style.left = `${x}px`;
-    firework.style.top = `${y}px`;
-    
-    // Animate the firework
-    fireworksContainer.appendChild(firework);
-    setTimeout(() => {
-        firework.style.transform = 'scale(3)';
-        firework.style.opacity = '0';
-    }, 10);
-
-    setTimeout(() => {
-        fireworksContainer.removeChild(firework);
-    }, 1000);
+// Function to randomly position the cake
+function randomPosition() {
+    const x = Math.random() * (window.innerWidth - 100); // Adjust for cake size
+    const y = Math.random() * (window.innerHeight - 100); // Adjust for cake size
+    cake.style.left = `${x}px`;
+    cake.style.top = `${y}px`;
 }
 
-// Function to display random message
-function displayMessage() {
+// Function to show fireworks (messages)
+function createFireworkMessage(x, y) {
+    const fireworkMessage = document.createElement('div');
+    fireworkMessage.classList.add('fireworks');
+    fireworkMessage.style.left = `${x}px`;
+    fireworkMessage.style.top = `${y}px`;
+    
+    // Choose a random message
     const randomIndex = Math.floor(Math.random() * messages.length);
-    messageDisplay.innerText = messages[randomIndex];
+    fireworkMessage.innerText = messages[randomIndex];
+
+    // Add the firework message to the container
+    fireworksContainer.appendChild(fireworkMessage);
+
+    // Remove the message after the animation is done
+    setTimeout(() => {
+        fireworksContainer.removeChild(fireworkMessage);
+    }, 1000); // Match this with the animation duration
 }
 
 // Add click event listener
 cake.addEventListener('click', (event) => {
     // Get the position of the click
-    const rect = cake.getBoundingClientRect();
-    const x = event.clientX - rect.left + rect.width / 2;
-    const y = event.clientY - rect.top + rect.height / 2;
+    const x = event.clientX;
+    const y = event.clientY;
 
-    // Create fireworks at the click position
-    createFirework(x, y);
-    displayMessage();
+    // Create fireworks message at the click position
+    createFireworkMessage(x, y);
 });
+
+// Randomly position the cake on load
+randomPosition();
 
 
