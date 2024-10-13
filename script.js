@@ -190,6 +190,33 @@ function autoSlides() {
     slides[autoSlideIndex - 1].style.display = "block";
     setTimeout(autoSlides, 5000); // Change slide every 5 seconds
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const hiddenNotes = document.querySelectorAll(".hidden-note");
+    const finalSurprise = document.getElementById("final-surprise");
+    const voiceMessage = document.getElementById("voice-message");
+
+    hiddenNotes.forEach(note => {
+        note.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+        note.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+
+        note.addEventListener("click", function () {
+            const message = this.getAttribute("data-message");
+            alert(message); // Show the hidden message
+
+            // Check if all notes have been clicked
+            if (document.querySelectorAll(".hidden-note[style*='display: none']").length === hiddenNotes.length) {
+                finalSurprise.style.display = "block"; // Show final surprise
+            }
+
+            this.style.display = "none"; // Hide the clicked note
+        });
+    });
+
+    // Play the voice message when the button is clicked
+    document.getElementById("play-message").addEventListener("click", function () {
+        voiceMessage.play();
+    });
+});
 
 
 
