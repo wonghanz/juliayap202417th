@@ -93,7 +93,7 @@ function displayPoem() {
 setTimeout(displayPoem, 2000);
 // Function to create and animate balloons
 function createBalloons(count) {
-    const balloonContainer = document.getElementById('balloon-container'); // Make sure this matches your HTML
+    const balloonContainer = document.getElementById('balloon-container');
 
     for (let i = 0; i < count; i++) {
         const balloon = document.createElement('div');
@@ -117,12 +117,11 @@ function createBalloons(count) {
         }, Math.random() * 2000); // Random delay for each balloon to start
     }
 }
-
-// Call the function to create balloons when the page loads
 window.onload = () => {
-    createBalloons(520); // Change this number for more or fewer balloons
+    setQuote();
+    createBalloons(520); // Create 520 balloons
+    setTimeout(displayPoem, 2000); // Start displaying the poem after a delay
 };
-
 
 // Trigger falling petals every second
 setInterval(createPetal, 2000);
