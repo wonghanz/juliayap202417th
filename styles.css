@@ -111,8 +111,8 @@ audio {
 .balloons {
     position: relative; /* Allows absolute positioning of balloons */
     overflow: hidden; /* Prevents balloons from overflowing the container */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    width: 150vw; /* Full viewport width */
+    height: 150vh; /* Full viewport height */
 }
 
 /* Balloon styles */
@@ -199,7 +199,7 @@ audio {
 /* Slideshow container */
 .slideshow-container {
     position: relative;
-    max-width: 300px; /* Smaller width */
+    max-width: 350px; /* Smaller width */
     margin: 20px auto; /* Center the slideshow and add margin */
     overflow: hidden;
     border-radius: 10px;
