@@ -278,6 +278,7 @@ audio {
     .cake {
     font-size: 100px;
     cursor: pointer;
+    position: absolute;
     transition: transform 0.2s;
 }
 
