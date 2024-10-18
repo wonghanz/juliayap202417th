@@ -2,11 +2,13 @@ import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-	font-family: 'Indie Flower', cursive !important;
-  background: #FDE3A7; /*CAPE HONEY*/
-	margin: 0px;
-	padding: 0px;
+    background-color: #f8f9fa;
+    background-image: url('your-image-url');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Indie Flower', cursive !important;
 }
+
 
 ::selection {
 	background: transparent;
@@ -83,8 +85,8 @@ h4 {
 }
 
 .card .imgBox img {
-	min-width: 250px;
-	max-height: 400px;
+	min-width: 500px;
+	max-height: 650px;
 }
 
 .card:hover .imgBox {
@@ -108,8 +110,8 @@ h4 {
 }
 
 .card .details p {
-	font-size: 15px;
-	line-height: 5px;
+	font-size: 30px;
+	line-height: 10px;
 	transform: rotate(-10deg);
 	padding: 0 0 0 20px;
 }
