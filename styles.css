@@ -324,4 +324,8 @@ audio {
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
 }
+ canvas{
+	cursor: crosshair;
+	display: block;
+}
 
