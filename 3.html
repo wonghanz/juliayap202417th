@@ -1,58 +1,30 @@
-.outer-container
-  h1.wish - Wishing you -
-  .container
-    .arrow
-    .wheel
-      .inner-wheel#wheel
-        .section
-          span.b-day Happy Birthday!
-        .section
-          span.vertical.joy O
-        .section#love
-          span.fa.fa-heart.pulse
-        .section
-          span.adventure New Adventures
-        .section
-          span.vertical.fun U
-        .section
-          span.lots lots of
-          span.fa.fa-birthday-cake
-      .spin-button
-.overlay
-  h1 
-    | I love
-    br
-    | you berrrry
-    br
-    | much
-  .cherry-container-1
-    .cherry
-      .leaf
-  .cherry-container-2
-    .cherry
-      .leaf
-  .cherry-container-3
-    .cherry
-      .leaf
-  .cherry-container-4
-    .cherry
-      .leaf
-  .cherry-container-5
-    .cherry
-      .leaf
-  .cherry-container-6
-    .cherry
-      .leaf
-  .cherry-container-7
-    .cherry
-      .leaf
+<!DOCTYPE html>
+<html lang="en">
 
-  .cherry-container-8
-    .cherry
-      .leaf
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin and Win</title>
+  <link rel="stylesheet" href="3.css">
+</head>
 
-  .cherry-container-9
-    .cherry
-      .leaf
+<body>
+  <div class="container">
+    <h1>Lucky Draw Spin and Win</h1>
+    <div class="wheel-container">
+      <div class="wheel" id="wheel">
+        <div class="sector" style="background-color: #ff9999; transform: rotate(0deg);"><span>3 days of professional PT training</span></div>
+        <div class="sector" style="background-color: #99ccff; transform: rotate(72deg);"><span>3 Free steam baths</span></div>
+        <div class="sector" style="background-color: #99ff99; transform: rotate(144deg);"><span>1 Week of gym facility</span></div>
+        <div class="sector" style="background-color: #ffcc99; transform: rotate(216deg);"><span>Win a LFS Water bottle</span></div>
+        <div class="sector" style="background-color: #ff9966; transform: rotate(288deg);"><span>Win a month free membership</span></div>
+      </div>
+      <div class="pointer"></div>
+    </div>
+    <button onclick="spin()">Spin</button>
+    <div id="result"></div>
+  </div>
+  <script src="3.js"></script>
+</body>
 
-
+</html>
