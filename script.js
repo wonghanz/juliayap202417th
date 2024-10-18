@@ -562,14 +562,7 @@ var theName = getUrlVars()["name"];
 
 var myElement = document.querySelector('#message');
 
-if (!theName){
-	theName="";
-	myElement.innerHTML = '<h1>Happy Birthday!</h1>'
-}else{
-theNewName = theName.replace(/%20/g, ' '); //oooo a regular exp!
-//alert(theNewName); 
-myElement.innerHTML = '<h1>Happy Birthday '+theNewName+'!</h1>';	
-}
+
 
 //ch = canvas height
 eh=myElement.clientHeight;
@@ -634,38 +627,6 @@ function function_fade_in(opacity_value) {
         done = true;
     }
 }
-
-
-
-
-//keep code handy for when we want to insert the new message --
-function newMessage(){
-myElement.innerHTML = '<h2>Hope you start a new happy life !</h2>';	
-fade_in_button();
-}
-
-function touchHandler(event){
-    var touches = event.changedTouches,
-        first = touches[0],
-        type = "";
-        switch(event.type){
-        
-        case "touchstart": 
-        type = "mousedown"; 
-        break;
-        
-        case "touchmove":  
-        type="mousemove"; 
-        break;        
-        
-        case "touchend":   
-        type="mouseup"; break;
-        default: return;
-        } // end switch
-
-    //initMouseEvent(type, canBubble, cancelable, view, clickCount, 
-    //           screenX, screenY, clientX, clientY, ctrlKey, 
-    //           altKey, shiftKey, metaKey, button, relatedTarget);
 
     var simulatedEvent = document.createEvent("MouseEvent");
     simulatedEvent.initMouseEvent(type, true, true, window, 1, 
