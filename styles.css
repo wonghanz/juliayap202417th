@@ -11,7 +11,9 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repetition */
 }
-
+h1{
+	pointer-events: none;
+}
 /* Container for the text */
 .container {
     text-align: center;
