@@ -151,6 +151,8 @@ function setQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteElement.innerText = quotes[randomIndex];
 }
+document.addEventListener("DOMContentLoaded", setQuote);
+
 
 // Call the function to set the quote when the page loads
 
