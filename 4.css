@@ -1,56 +1,39 @@
-
-
 body {
-  background: url('g.jpeg') no-repeat center center fixed;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+    background: url('g.jpeg') no-repeat center center fixed;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 #ui {
-  // transform: rotateZ(-8deg);
-  .text {
+    position: relative; /* Added to contain absolute positioned children */
+}
+
+.text {
     position: absolute;
-    font-size: $fontSize;
+    font-size: 2rem; /* You need to define $fontSize, replaced with a fixed value */
     color: #fff;
-    line-height: $fontSize;
-    // opacity: 0;
+    line-height: 2rem; /* Match this with font-size */
     font-family: 'Anton', sans-serif;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
-    // filter: blur(2px) contrast(5);
     letter-spacing: 1rem;
+}
 
-    @for $i from 0 through 100 {
-      $key: $i + 1;
-      &:nth-child(#{$key}) {
-        $row: floor($i / 20);
-        // color: rgba(random(155) + 100, random(155) + 100, random(55), 1);
+@for $i from 0 through 49 { /* Change from 100 to 49 since we have 50 items */
+    $key: $i + 1;
+    .text:nth-child(#{$key}) {
         color: rgba(random(30), random(100), random(155) + 100, 1);
         animation: clip#{$i} random(10000) + 10000ms ease-in-out infinite alternate;
         filter: blur(#{random(25) - 10}px);
-        @keyframes clip#{$i} {
-          0% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          25% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          50% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          75% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          100% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-        }
-      }
     }
-  }
-}
 
+    @keyframes clip#{$i} {
+        0%, 25%, 50%, 75%, 100% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+        }
+    }
+}
