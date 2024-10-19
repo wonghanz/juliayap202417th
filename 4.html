@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Here! 🎻⚗️📖</title>
-    <link rel="stylesheet" href="4.css"> <!-- Link to your CSS file -->
-    -- Link to your JavaScript file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yapification Time</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <div id="ui">
-        <!-- Loop to display the favorite word multiple times -->
-        <script>
-            var text = "Yapification Time";
-            for (let i = 0; i < 50; i++) {
-                document.write(`<div class="text">${text}</div>`);
-            }
-        </script>
-    </div>
+  <div id="ui">
+    <!-- Loop 50 times to create 50 text elements -->
+    <script>
+      const text = "Yapification Time";
+      const container = document.getElementById('ui');
+      for (let i = 0; i < 50; i++) {
+        const div = document.createElement('div');
+        div.classList.add('text');
+        div.textContent = text;
+        container.appendChild(div);
+      }
+    </script>
+  </div>
 </body>
 </html>
