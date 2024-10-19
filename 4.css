@@ -1,7 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
-$fontSize: 10rem;
 
 body {
   background: url('z.jpeg') no-repeat center center fixed;
@@ -14,45 +11,28 @@ body {
 }
 
 #ui {
-  // transform: rotateZ(-8deg);
-  .text {
-    position: absolute;
-    font-size: $fontSize;
-    color: #fff;
-    line-height: $fontSize;
-    // opacity: 0;
-    font-family: 'Anton', sans-serif;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-    // filter: blur(2px) contrast(5);
-    letter-spacing: 1rem;
+  position: relative;
+}
 
-    @for $i from 0 through 100 {
-      $key: $i + 1;
-      &:nth-child(#{$key}) {
-        $row: floor($i / 20);
-        // color: rgba(random(155) + 100, random(155) + 100, random(55), 1);
-        color: rgba(random(30), random(100), random(155) + 100, 1);
-        animation: clip#{$i} random(10000) + 10000ms ease-in-out infinite alternate;
-        filter: blur(#{random(25) - 10}px);
-        @keyframes clip#{$i} {
-          0% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          25% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          50% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          75% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-          100% {
-            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
-          }
-        }
-      }
-    }
+.text {
+  position: absolute;
+  font-size: 10rem;
+  color: #fff;
+  line-height: 10rem;
+  font-family: 'Anton', sans-serif;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  letter-spacing: 1rem;
+}
+
+.text:nth-child(1) {
+  color: rgba(30, 100, 255, 1);
+  animation: clip1 20000ms ease-in-out infinite alternate;
+  filter: blur(5px);
+}
+
+@keyframes clip1 {
+  0%, 25%, 50%, 75%, 100% {
+    clip-path: circle(100px at 80px 80px);
   }
 }
