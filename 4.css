@@ -1,39 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+$fontSize: 10rem;
+
 body {
-    background: url('abc.jpeg') no-repeat center center fixed;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  background: url('z.jpeg') no-repeat center center fixed;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
 #ui {
-    position: relative; /* Added to contain absolute positioned children */
-}
-
-.text {
+  position: relative;
+  .text {
     position: absolute;
-    font-size: 2rem; /* You need to define $fontSize, replaced with a fixed value */
+    font-size: $fontSize;
     color: #fff;
-    line-height: 2rem; /* Match this with font-size */
+    line-height: $fontSize;
     font-family: 'Anton', sans-serif;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
     letter-spacing: 1rem;
-}
-
-@for $i from 0 through 49 { /* Change from 100 to 49 since we have 50 items */
-    $key: $i + 1;
-    .text:nth-child(#{$key}) {
+    
+    /* Dynamic color and animation */
+    @for $i from 0 through 100 {
+      $key: $i + 1;
+      &:nth-child(#{$key}) {
+        $row: floor($i / 20);
         color: rgba(random(30), random(100), random(155) + 100, 1);
         animation: clip#{$i} random(10000) + 10000ms ease-in-out infinite alternate;
         filter: blur(#{random(25) - 10}px);
-    }
-
-    @keyframes clip#{$i} {
-        0%, 25%, 50%, 75%, 100% {
+        
+        @keyframes clip#{$i} {
+          0%, 25%, 50%, 75%, 100% {
             clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
         }
+      }
     }
+  }
 }
