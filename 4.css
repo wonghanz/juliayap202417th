@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('https://your-galaxy-image-url.jpg') no-repeat center center fixed;
+    background: url('g.jpeg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }
