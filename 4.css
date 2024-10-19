@@ -1,33 +1,56 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-}
+
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('g.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
+  background: url('g.jpeg') no-repeat center center fixed;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
-h1 {
+#ui {
+  // transform: rotateZ(-8deg);
+  .text {
     position: absolute;
-    top: 20%;
-    font-size: 4rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-}
+    font-size: $fontSize;
+    color: #fff;
+    line-height: $fontSize;
+    // opacity: 0;
+    font-family: 'Anton', sans-serif;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    // filter: blur(2px) contrast(5);
+    letter-spacing: 1rem;
 
-graph {
-    position: relative;
-    width: 70vmin;
-    height: 100vmin;
-    background: rgba(30, 30, 30, 0.8); /* Slightly transparent background for doodle */
-    border-radius: 15px; /* Optional: rounded corners */
+    @for $i from 0 through 100 {
+      $key: $i + 1;
+      &:nth-child(#{$key}) {
+        $row: floor($i / 20);
+        // color: rgba(random(155) + 100, random(155) + 100, random(55), 1);
+        color: rgba(random(30), random(100), random(155) + 100, 1);
+        animation: clip#{$i} random(10000) + 10000ms ease-in-out infinite alternate;
+        filter: blur(#{random(25) - 10}px);
+        @keyframes clip#{$i} {
+          0% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
+          25% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
+          50% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
+          75% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
+          100% {
+            clip-path: circle(random(150) + 30px at random(160) - 30% random(160) - 30%);
+          }
+        }
+      }
+    }
+  }
 }
 
