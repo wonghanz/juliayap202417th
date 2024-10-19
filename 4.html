@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Here! 🎻⚗️📖</title>
     <link rel="stylesheet" href="4.css"> <!-- Link to your CSS file -->
-    <script src="4.js" defer></script> <!-- Link to your JavaScript file -->
-   // Please typing your favorite word!
-- var $text = "Yapification Time"
-
-
-#ui
-  - for (i = 0; i < 50; i++)
-    .text #{$text}
+    -- Link to your JavaScript file -->
+</head>
+<body>
+    <div id="ui">
+        <!-- Loop to display the favorite word multiple times -->
+        <script>
+            var text = "Yapification Time";
+            for (let i = 0; i < 50; i++) {
+                document.write(`<div class="text">${text}</div>`);
+            }
+        </script>
+    </div>
+</body>
 </html>
