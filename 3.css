@@ -28,44 +28,36 @@ h1 {
 .wheel-container {
   position: relative;
   width: 100%;
-  padding-top: 100%;
-  margin-bottom: 30px;
+  padding-top: 100%; /* Maintain a square aspect ratio */
+  margin-bottom: 40px;
 }
 
 .wheel {
-  /* Rest of the wheel styles remain the same */
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, #d4e2f1, #9fb9d3);
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #007bff;
+  background-color: grey;
   transform: rotate(0deg);
   transition: transform 4s ease-out;
+  overflow: hidden; /* Ensure sectors don't overflow */
 }
 
-.pointer {
-  position: absolute;
-  top: -50px; /* Adjust the pointer position */
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: #ff6f61;
-  transform: translateX(-50%);
-  clip-path: polygon(50% 0%, 100% 38%, 80% 100%, 50% 75%, 20% 100%, 0% 38%);
-  /* Clip-path creates a heart shape */
-}
 .sector {
   position: absolute;
   width: 50%;
   height: 50%;
+  background-color: transparent;
   transform-origin: 100% 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .sector span {
@@ -76,9 +68,20 @@ h1 {
   font-size: 12px;
   color: white;
   text-align: center;
-  line-height: 1.2; /* Adjust line height to fit the shape better */
-  white-space: nowrap; /* Ensure text stays within the sector */
+  line-height: 1.2;
 }
+
+.pointer {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ff6f61;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 38%, 80% 100%, 50% 75%, 20% 100%, 0% 38%);
+}
+
 
 button {
   padding: 12px 20px;
