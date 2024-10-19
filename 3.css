@@ -21,7 +21,7 @@ body {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
-  color: #333;
+  color: #ff009e;
   letter-spacing: 1px;
 }
 
@@ -39,8 +39,8 @@ h1 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 10px solid #007bff;
-  background-color: grey;
+  border: 10px solid #f2a4b1;
+  background-color: #93c4d5;
   transform: rotate(0deg);
   transition: transform 4s ease-out;
   overflow: hidden; /* Ensure sectors don't overflow */
@@ -87,7 +87,7 @@ button {
   padding: 12px 20px;
   border: none;
   border-radius: 50px;
-  background-color: #6c757d;
+  background-color: #bad0b9;
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -102,5 +102,5 @@ button:hover {
 #result {
   margin-top: 20px;
   font-size: 20px;
-  color: #333;
+  color: #ff009e;
 }
